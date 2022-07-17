@@ -190,13 +190,20 @@ select * from students;
 ALTER TABLE STUDENTS DROP COLUMN STUDENT_NAME;
 select * from students;
 
+
 --DIFFERENT OPERATIONS
 SELECT (t_name) AS TEACHER_NAME FROM teachers;
 --DISTINCT COURSES(TOTAL 3 COURSES TAKEN BY 6 TEACHERS
 SELECT DISTINCT(tcourse_id) AS COURSES FROM teachers;
 SELECT tcourse_id AS course_number FROM teachers WHERE tcourse_id LIKE '%311%';
+
+--ORDER BY
+
 SELECT t_id,t_name,tcourse_id FROM teachers ORDER BY t_id DESC;
 SELECT t_id,t_name,tcourse_id FROM teachers ORDER BY t_id aSC;
+
+--GROUP BY
+select s_roll AS TOTAL_STUDENT from registration group by s_roll;
 
 --NESTED QUERY
 --SELECT TEACHERS WHO HAVE CLASS BEFORE 11.35 AM(THEIR CLASSES WILL BE RESCHEDULED)
