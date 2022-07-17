@@ -129,7 +129,8 @@ create table completed(
 	s_roll varchar(10) NOT NULL,
 	c_check varchar(30) ,
 	pass varchar(4) NOT NULL,
-	c_num varchar(10),
+	c_num varchar(10) NOT NULL,
+	foreign key (c_num) references courses(c_num) on delete cascade,
 	primary key(s_roll,pass)
 );
 
