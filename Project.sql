@@ -252,12 +252,20 @@ BEGIN
 END;
 /
 
+--tTRANSACTION MANAGEMENT
+insert into students (s_roll,s_Last_name) values (1807035,'ISLAM');
+select * from students;
+savepoint cont_1807035;
+insert into students (s_roll,s_Last_name) values (1807120,'JAHAN');
+savepoint cont_1807120;
+select * from students;
+rollback to cont_1807035;
+select * from students;
 
+--CREATING VIEW
 
-
-
-
-
+create or replace view jointable AS SELECT s.s_last_name,r.c_num,r.c_check from students s natural join registration r;
+select * from jointable;
 
 
 
